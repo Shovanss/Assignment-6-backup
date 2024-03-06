@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writer Forum</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/262f0b2700.js" crossorigin="anonymous"></script>
+<style>
+  .font-mulish{
+    font-family: "Mulish", sans-serif;
+  }
+  .font-inter{
+    font-family: "Inter", sans-serif;
+  }
+</style>
+
+</head>
+<body>
+  <header class="mx-auto lg:w-[1320px]">
+    <!-- navbar section -->
+    <div class="navbar bg-base-100  mt-5">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a>Item 1</a></li>
+            <li>
+              <a>Parent</a>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </li>
+            <li><a>Item 3</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost lg:text-4xl lg:font-mulish lg:font-black lg:text-black">WriTer</a>
+      </div>
+      
+        <div class="hidden lg:flex gap-3 lg:translate-x-96 lg:-mr-6">
+          <div class="tooltip" data-tip="home">
+            <img src="images/Frame 2.png" alt="">
+          </div>
+          <div class="tooltip" data-tip="write">
+            <img src="images/Frame 3.png" alt="">
+          </div>
+          <div class="tooltip" data-tip="add">
+            <img src="images/Frame 4.png" alt="">
+          </div>
+          <div class="tooltip" data-tip="flagged user">
+            <img src="images/Frame 5.png" alt="">
+          </div>
+        </div>
+         
+        <div class="navbar-end">
+          <a class="btn text-center font-mulish text-xl font-bold text-white px-7 bg-[#797DFC] rounded-[50px]">Sign In</a>
+        </div>
+      </div>
+ <!-- banner section -->
+      <div class="bg-[url(images/bgbanner.png)] bg-[#12132D] lg:flex lg:mt-12 rounded-3xl bg-cover mx-auto w-[365px] lg:w-[1320px]">
+        <div class="lg:mt-24 lg:mb-24 lg:mx-24">
+          <h3 class="text-white text-center mb-4 pt-6 lg:pt-0 font-mulish lg:font-black lg:text-6xl  lg:mb-5">
+            Welcome to the
+            <br>
+            <span class="text-[#797DFC]">WriTer</span> Forum
+          </h3>
+          <p class="font-mulish text-[#FFFFFFCC] text-center lg:text-xl font-medium mb-8">Share your useful opinion and win and our
+            <br>
+             forum's coffee mug!</p>
+              <input id="search-by-category" type="text" placeholder="Search here anything" class="w-full ml-6 items-center max-w-xs font-mulish font-medium text-[#03071280] p-4 mb-2 rounded-[50px] outline-none" />
+              <button onclick="searchCategory()" class="rounded-[46px] bg-[#797DFC] py-2 px-6 font-mulish text-white font-bold translate-x-6 lg:-translate-x-28 ">Search</button>
+            
+              
+             
+        </div>
+        <div class="mt-6 pb-8 lg:mt-24 lg:mb-24 lg:mx-24">
+          <div class="card w-[320px] bg-white lg:w-96 shadow-xl font-mulish font-medium text-2xl text-[#12132DCC] mx-auto p-12 flex gap-4">
+           <div class="flex justify-between">
+            <h1>Registered Users</h1>
+            <p>01</p>
+           </div>
+           <div class="flex justify-between">
+            <h1>Forum</h1>
+            <p>01</p>
+           </div>
+           <div class="flex justify-between">
+            <h1>Topics</h1>
+            <p>01</p>
+           </div>
+           <div class="flex justify-between">
+            <h1>Replies</h1>
+            <p>01</p>
+           </div>
+          </div>
+        </div>
+       </div>
+  </header>
+  <main>
+    <!-- Discuss Section -->
+    <section class="mt-24 w-[365px] mx-auto lg:w-[1320px]">
+      <h1 class="text-center text-[#12132D] font-black text-4xl pb-6">Let’s Discuss</h1>
+      <p class="text-center pb-12 text-[#12132D99] font-inter text-lg">Yes, you can read our author's book and increase your brain.
+      <br>
+      It will enrich your knowledge.</p>
+      <div id="spinner" class=" my-8 text-center">
+        <span class="loading loading-spinner loading-lg"></span>
+    </div>
+      <div class="lg:flex"> 
+
+        <div id="post-container" class="flex flex-col gap-4 lg:gap-6 lg:justify-between w-[365px] lg:w-[780px]">
+          
+        </div>
+
+        <div class="w-[365px] lg:w-[650px] mt-4 lg:mt-0 bg-[#12132D0D] rounded-3xl p-6">
+          <div class="flex justify-between">
+            <p class="font-mulish font-bold text-black text-xl">Title</p>
+            <div class="flex items-start font-inter text-[#12132D99] gap-2">
+              <img src="images/Frame.png" alt="">
+              <p class="">Mark as read(<span id="counter">0</span>)</p> 
+            </div>
+          </div>
+    
+          <div id="mark-read-container">
+            
+          </div>
+        
+           
+          
+        </div>
+      </div>
+     
+    </section>
+
+    <!-- forum section -->
+    <div class="w-[365px] mx-auto lg:w-[1320px] bg-[#12132D] flex flex-col lg:flex-row mt-24 justify-around rounded-[32px]">
+      <div class="pt-8 mx-8  lg:mt-24 lg:mb-24">
+        <h1 class="font-mulish text-white lg:text-4xl lg:font-black pb-4">Join Our Forum</h1>
+        <p class="font-mulish font-medium lg:text-xl pb-8 text-[#FFFFFFCC]">Share your thoughtful opinion and win an Writer's forum coffee mug! Yes, It
+        <br>
+        was provide the results via our app. </p>
+        <button class="lg:font-bold text-white font-mulish lg:text-xl bg-[#797DFC] px-7 py-2 rounded-[50px]">Registered Now</button>
+      </div>
+      <div class="mt-16 border-[1px] border-dashed border-white">
+        <img src="images/joinforum.png" alt="" srcset="">
+      </div>
+
+    </div>
+
+     <!-- Latest Post Section -->
+     <section class="w-[365px] lg:w-[1320px] mx-auto mt-24">
+      <h1 class="font-mulish font-black text-4xl text-black text-center pb-6">Latest Posts</h1>
+      <p class="font-inter text-lg text-[#12132D99] text-center">Here, you will find all the latest post of our author and update about their
+      <br>
+      activity. So, it was helpful to up-to-date with us.</p>
+      <div id="latest-post-container" class="mx-auto lg:grid lg:grid-cols-3 grid-cols-1 mt-12 lg:gap-5">
+  
+      </div>
+
+  </main>
+  <footer class="w-[375px] lg:w-full mt-24 font-mulish bg-[#12132D0D]">
+    <div class="text-center mb-8 pt-24">
+      <h1 class="text-4xl font-black pb-4 text-black">WriTer</h1>
+      <p class="text-[#12132DB3] pb-4 text-lg">A leading company and trusted place for all kind of writer's and readers. It was established in the 
+      <br>
+      month of January, 20 years ago. We are still running.</p>
+    </div>
+    <div class="flex justify-center gap-8">
+     <a href=""><img src="images/1.png" alt="" srcset=""></a> 
+     <a href=""><img src="images/2.png" alt="" srcset=""></a> 
+     <a href=""><img src="images/3.png" alt="" srcset=""></a> 
+     <a href=""><img src="images/4.png" alt="" srcset=""></a> 
+    </div>
+    <hr class="w-[80%] mx-auto border-[1px] border-solid border-[#30325E1A] my-12">
+    <p class="text-[#12132D80] text-center pb-24 font-light">2017, All Rights Reserved.</p>
+    
+    
+
+  </footer>
+
+
+
+  <script src="api.js"></script>
+</body>
+</html>
